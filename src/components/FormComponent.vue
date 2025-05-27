@@ -20,8 +20,8 @@
       <button type="submit">CONTACT US</button>
     </form>
     <div v-if="showSuccessMessage" class="success-message">
-      <p>Спасибо за заявку! Мы свяжемся с вами.</p>
-      <button @click="showSuccessMessage = false">Закрыть</button>
+      <p>Thank you for your request! We will contact you soon.</p>
+      <button @click="showSuccessMessage = false">Close</button>
     </div>
   </main>
 </template>
@@ -50,7 +50,7 @@ export default {
       this.errors.phone = !this.form.phone
         ? 'Phone is required'
         : !re.test(this.form.phone)
-        ? 'Phone must be exactly 11 digits'
+        ? '11 digits required'
         : ''
     },
     validateEmail() {

@@ -122,22 +122,32 @@ background: #e67e22;
 /*форма*/
 .contact-form {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
   background: rgba(255, 255, 255, 0.9);
   padding: 22px;
   border-radius: 5px;
   transform: scale(1.6);
   transform-origin: center;
+  position: relative;
+}
+
+.contact-form > div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 150px;
+  margin-bottom: 25px;
 }
 
 .contact-form input {
   padding: 10px 10px;
   font-size: 13px;
-  min-width: 150px;
+  width: 100%;
   border: 1px solid #D3D3D3;
   border-radius: 2px;
   opacity: .8;
+  box-sizing: border-box;
 }
 
 .contact-form button {
@@ -149,6 +159,7 @@ background: #e67e22;
   font-size: 13px;
   white-space: nowrap;
   outline: 2px solid #e67e22;
+  margin-top: 10px;
 }
 
 .contact-form input::placeholder {
@@ -160,10 +171,13 @@ background: #e67e22;
   color: red;
   font-size: 12px;
   margin-top: 4px;
-  display: none;  /* Скрываем ошибку по умолчанию */
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
 }
 
-/* Когда ошибка есть — показываем текст */
 .error-message.show {
   display: block;
 }
@@ -189,6 +203,30 @@ background: #e67e22;
   .contact-form {
     flex-direction: column;
     transform: none;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .contact-form > div {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contact-form input {
+    width: 100%;
+    padding: 12px 10px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .error-message {
+    bottom: -25px;
+    font-size: 11px;
   }
 
   .header-text h2 {
@@ -202,28 +240,28 @@ background: #e67e22;
 
 @media (min-width: 912px) and (max-width: 1600px) {
   .page-header {
-      padding-bottom: 52px;
+    padding-bottom: 52px;
   }
   
   .logo img {
-      height: 55px;
+    height: 55px;
   }
   
   .logo h1 {
-      font-size: 38px;
+    font-size: 38px;
   }
   
   .nav-icon {
-      width: 30px;
-      height: 30px;
+    width: 30px;
+    height: 30px;
   }
 
   .navigation ul {
-      gap: 30px;
+    gap: 30px;
   }
   
   .contact-form {
-      transform: none;
+    transform: none;
   }
 }
 
